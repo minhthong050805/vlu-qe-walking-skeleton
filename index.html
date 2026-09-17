@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Form</title>
+</head>
+<body>
+  <h2>Đăng nhập</h2>
+  <form id="loginForm">
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button type="submit">Login</button>
+  </form>
+  <p id="result"></p>
+
+  <script src="login.js"></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+      const ok = checkLogin(user, pass);
+      document.getElementById('result').innerText = ok ? "Đăng nhập thành công!" : "Sai tài khoản hoặc mật khẩu!";
+    });
+  </script>
+</body>
+</html>
